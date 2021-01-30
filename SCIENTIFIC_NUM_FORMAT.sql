@@ -1,4 +1,9 @@
 /*
+  Copyright (c) 2021 Vladimir Butygin.
+  This work is licensed under the terms of the Apache License, Version 2.0.
+  You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  
   Release for Firebird 3!
 
   Converts a number with a large order to 2 values: mantissa and order.
