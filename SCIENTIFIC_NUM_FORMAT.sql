@@ -43,6 +43,14 @@ returns (
 as
 begin
   ID = :id_val;
+  if (coalesce(:VAL,0) = 0) then
+  begin
+    mant = 0;
+    ord = 0;
+    suspend;
+    exit;
+  end
+  
   with recursive scientific_f(mant_s, mant, ord_s, ord) as (
     select iif(:val < 0,-1,1) mant_s, abs(:val) as mant, iif(abs(:val) < 1,-1,1) ord_s, 0 as ord from rdb$database
     union all
